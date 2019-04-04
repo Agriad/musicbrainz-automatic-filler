@@ -1,5 +1,5 @@
 from misc_data import website_list
-from website_parser import *
+from discogs_parser import *
 
 
 def check_website(website, main_website_list):
