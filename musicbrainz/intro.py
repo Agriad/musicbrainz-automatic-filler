@@ -1,4 +1,4 @@
-from user_input import UserInput
+from misc_data import UserInput
 
 
 def user_browser():
