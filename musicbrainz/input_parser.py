@@ -4,20 +4,19 @@ from website_parser import *
 
 def check_website(website, main_website_list):
     for x in main_website_list:
-        if website == x:  # might need to change
+        if x in website:  # might need to change
             return website
-        else:
-            return False
+    return False
 
 
-def method_finder(website, link):
-    if website == "discog":
-        discogs_parser(link)
+def method_finder(link):
+    if "www.discogs.com" in link:
+        return discogs_parser(link)
     else:
         return False
 
 
 def input_parser(user_object):
-    for x in user_object.user_website:
-        if check_website(x, website_list):
-            method_finder()  # might change
+    for websites in user_object.user_websites:
+        if check_website(websites, website_list):
+            return method_finder(websites)  # might change

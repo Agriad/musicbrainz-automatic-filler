@@ -1,4 +1,4 @@
-website_list = ["discogs"]
+website_list = ["www.discogs.com"]
 
 
 class UserInput:
@@ -28,6 +28,9 @@ class AlbumData:
 
     # def __init__(self, artist, title, length):
     #     self.songs.append(MusicData(artist, title, length))
+
+    def __init__(self):
+        self.songs = []
 
     def add_song(self, artist, title, length):
         self.songs.append(MusicData(artist, title, length))
