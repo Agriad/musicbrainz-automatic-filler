@@ -26,8 +26,8 @@ class MusicData:
 class AlbumData:
     songs = []
 
-    def __init__(self, artist, title, length):
-        self.songs.append(MusicData(artist, title, length))
+    # def __init__(self, artist, title, length):
+    #     self.songs.append(MusicData(artist, title, length))
 
     def add_song(self, artist, title, length):
         self.songs.append(MusicData(artist, title, length))
