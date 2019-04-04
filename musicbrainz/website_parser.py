@@ -24,11 +24,20 @@ def music_object_maker(artist, title, length):
 
     return album
 
-#def discog_artist_parser(artist):
+
+def discog_artist_parser(artist):
+    final_artist = ""
+    new_artist = artist.findAll("a")
+
+    for text in new_artist:
+        new_text = text.string
+        final_artist += new_text
+
+    return final_artist
 
 
 def discog_title_parser(title):
-    new_title = title.find("span", {"class": "tracklist_track_title"})
+    new_title = title.find("span", {"class": "tracklist_track_title"}).string
     return new_title
 
 
@@ -41,7 +50,7 @@ def discog_album_parser(artist_list, title_list, length_list):
     modified_length = []
 
     for x in range(0, array_length):
-
+        modified_artist.append(discog_artist_parser(artist_list[x]))
         modified_title.append(discog_title_parser(title_list[x]))
 
 
