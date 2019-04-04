@@ -6,4 +6,4 @@ def printer(album):
         title = music.title
         length = music.length
 
-        file.write(title + " - " + artist + " (" + length + ")")
+        file.write(title + " - " + artist + " (" + length + ")" + "\n")

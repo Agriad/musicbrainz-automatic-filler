@@ -4,23 +4,11 @@ from misc_data import AlbumData
 
 
 def music_object_maker(artist, title, length):
-    album = AlbumData
+    album = AlbumData()
     array_length = len(title)
 
-    # print(album.songs)
-
     for x in range(0, array_length):
-        # print("artist")
-        # print(artist[x])
-        #
-        # print("title")
-        # print(title[x])
-        #
-        # print("length")
-        # print(length[x])
-        # print("\n")
-
-       album.add_song(artist[x], title[x], length[x])
+        album.add_song(artist[x], title[x], length[x])
 
     return album
 
@@ -41,7 +29,10 @@ def discog_title_parser(title):
     return new_title
 
 
-#def discog_length_parser(length):
+def discog_length_parser(length):
+    new_length = length.find("span").string
+    return new_length
+
 
 def discog_album_parser(artist_list, title_list, length_list):
     array_length = len(artist_list)
@@ -52,7 +43,7 @@ def discog_album_parser(artist_list, title_list, length_list):
     for x in range(0, array_length):
         modified_artist.append(discog_artist_parser(artist_list[x]))
         modified_title.append(discog_title_parser(title_list[x]))
-
+        modified_length.append(discog_length_parser(length_list[x]))
 
     return [modified_artist, modified_title, modified_length]
 

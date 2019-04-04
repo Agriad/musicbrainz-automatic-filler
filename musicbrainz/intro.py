@@ -25,7 +25,4 @@ def intro():
         this_user.add_website(user_website_input)
         user_website_input = user_website()
 
-    # print(this_user.user_browser)
-    # print(this_user.user_websites)
-
     return this_user

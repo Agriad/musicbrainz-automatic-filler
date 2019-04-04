@@ -4,5 +4,4 @@ from printer import *
 
 user_object = intro()
 album_object = input_parser(user_object)
-print("print")
-# printer(album_object)
+printer(album_object)
