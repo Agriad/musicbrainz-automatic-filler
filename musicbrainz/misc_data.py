@@ -34,7 +34,7 @@ class AlbumData:
     label = ""
     cat_no = ""
     country = ""
-    date = ""
+    date = []
     songs = []
 
     def __init__(self):
@@ -42,6 +42,21 @@ class AlbumData:
 
     def add_song(self, artist, title, length):
         self.songs.append(MusicData(artist, title, length))
+
+    def add_title(self, title):
+        self.title = title
+
+    def add_label(self, label):
+        self.label = label
+
+    def add_cat(self, cat):
+        self.cat_no = cat
+
+    def add_country(self, country):
+        self.country = country
+
+    def add_date(self, date):
+        self.date = date
 
 
 class AlbumDataDone:

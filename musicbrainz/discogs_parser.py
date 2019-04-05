@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 from misc_data import AlbumData
 
 
-def music_object_maker(artist, title, length):
-    album = AlbumData()
+def music_object_maker(artist, title, length, album):
     array_length = len(title)
 
     for x in range(0, array_length):
@@ -138,7 +137,6 @@ def discogs_country(soup):
             if "Country" in country[x].string:
                 out = country[x + 1].find("a").string
                 out = out.split("\n")
-                print(out)
                 out = out[1]
                 out = out[16:len(out)]
                 return out
@@ -179,6 +177,13 @@ def discogs_parser(link):  # change a bit to make it more modular
     country = discogs_country(soup)
     date = discogs_date(soup)
 
+    album = AlbumData()
+    album.add_title(album_title)
+    album.add_label(label)
+    album.add_cat(cat_no)
+    album.add_country(country)
+    album.add_date(date)
+
     artist_list = soup.findAll("td", {"class": "tracklist_track_artists"})
     title_list = soup.findAll("td", {"class": "track tracklist_track_title mini_playlist_track_has_artist"})
     length_list = soup.findAll("td", {"class": "tracklist_track_duration"})
@@ -186,7 +191,7 @@ def discogs_parser(link):  # change a bit to make it more modular
     album_as_text = discogs_album_parser(artist_list, title_list, length_list)
 
     if discogs_check_null(album_as_text[0], album_as_text[1]):
-        album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2])
+        album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2], album)
         return album
     else:
         artist = discogs_single_artist_parser(soup)
@@ -194,7 +199,7 @@ def discogs_parser(link):  # change a bit to make it more modular
 
         album_as_text = discogs_single_album_parser(artist, title_list, length_list)
 
-        album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2])
+        album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2], album)
         return album
 
 
