@@ -212,3 +212,11 @@ console.error: BroadcastService:
 1554466914342	Marionette	INFO	Stopped listening on port 54198
 1554466916351	Marionette	INFO	Stopped listening on port 54256
 1554466918354	Marionette	INFO	Stopped listening on port 54318
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:190:13
+
