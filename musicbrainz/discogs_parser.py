@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 from misc_data import AlbumData
 
 
-def music_object_maker(artist, title, length):
-    album = AlbumData()
+def music_object_maker(artist, title, length, album):
     array_length = len(title)
 
     for x in range(0, array_length):
@@ -90,12 +89,100 @@ def discogs_single_album_parser(artist_list, title_list, length_list):
     return [modified_artist, modified_title, modified_length]
 
 
-def discogs_parser(link): # change a bit to make it more modular
+def discogs_title(soup):
+    profile = soup.find("h1", {"id": "profile_title"})
+    title = profile.findAll("span")
+    title = title[2].string.split("\n")
+    title = title[1]
+    title = title[44:len(title)]
+    return title
+
+
+def discogs_lable(soup):
+    profile = soup.find("div", {"class": "profile"})
+    lable = profile.findAll("div")
+
+    for x in range(0, len(lable)):
+        if "Label" in lable[x].string:
+            out = lable[x + 1].find("a")
+            return out.string
+
+    return None
+
+
+def discogs_cat(soup):
+    profile = soup.find("div", {"class": "profile"})
+    cat = profile.findAll("div")
+
+    for x in range(0, len(cat)):
+        try:
+            if "Label" in cat[x].string:
+                out = cat[x + 1].find("a").next_sibling.string
+                out = out.split("\n")
+                out = out[0]
+                out = out[4:len(out)]
+                return out
+        except TypeError:
+            continue
+
+    return None
+
+
+def discogs_country(soup):
+    profile = soup.find("div", {"class": "profile"})
+    country = profile.findAll("div")
+
+    for x in range(0, len(country)):
+        try:
+            if "Country" in country[x].string:
+                out = country[x + 1].find("a").string
+                out = out.split("\n")
+                out = out[1]
+                out = out[16:len(out)]
+                return out
+        except TypeError:
+            continue
+
+    return None
+
+
+def discogs_date(soup):
+    profile = soup.find("div", {"class": "profile"})
+    date = profile.findAll("div")
+
+    for x in range(0, len(date)):
+        try:
+            if "Released" in date[x].string:
+                out = date[x + 1].find("a")
+                out = out.string.split("\n")
+                out = out[1]
+                out = out[16:len(out)]
+                return out.split(" ")
+        except TypeError:
+            continue
+
+    return None
+
+
+def discogs_parser(link):  # change a bit to make it more modular
     r = requests.get(link)
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
 
-    print(soup)
+    # print(soup)
+
+    album_title = discogs_title(soup)
+    label = discogs_lable(soup)
+    cat_no = discogs_cat(soup)
+    country = discogs_country(soup)
+    date = discogs_date(soup)
+
+    album = AlbumData()
+    album.add_title(album_title)
+    album.add_label(label)
+    album.add_cat(cat_no)
+    album.add_country(country)
+    album.add_date(date)
 
     artist_list = soup.findAll("td", {"class": "tracklist_track_artists"})
     title_list = soup.findAll("td", {"class": "track tracklist_track_title mini_playlist_track_has_artist"})
@@ -104,7 +191,7 @@ def discogs_parser(link): # change a bit to make it more modular
     album_as_text = discogs_album_parser(artist_list, title_list, length_list)
 
     if discogs_check_null(album_as_text[0], album_as_text[1]):
-        album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2])
+        album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2], album)
         return album
     else:
         artist = discogs_single_artist_parser(soup)
@@ -112,7 +199,7 @@ def discogs_parser(link): # change a bit to make it more modular
 
         album_as_text = discogs_single_album_parser(artist, title_list, length_list)
 
-        album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2])
+        album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2], album)
         return album
 
 
