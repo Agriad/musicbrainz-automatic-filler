@@ -1,4 +1,4 @@
-from user_input import UserInput
+from misc_data import UserInput
 
 
 def user_browser():
@@ -14,17 +14,15 @@ def user_website():
 
 
 def intro():
-    user_browser_input = user_browser()
-    this_user = UserInput(user_browser_input)
+    # user_browser_input = user_browser()
+    # this_user = UserInput(user_browser_input)
+    this_user = UserInput("nothing")
 
     print("First input is given highest priority")
     user_website_input = user_website()
 
-    while user_website_input != "end":
+    while user_website_input != "":
         this_user.add_website(user_website_input)
         user_website_input = user_website()
-
-    # print(this_user.user_browser)
-    # print(this_user.user_websites)
 
     return this_user
