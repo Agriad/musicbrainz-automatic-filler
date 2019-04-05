@@ -33,8 +33,8 @@ class AlbumData:
     title = ""
     label = ""
     cat_no = ""
-    date = ""
     country = ""
+    date = ""
     songs = []
 
     def __init__(self):

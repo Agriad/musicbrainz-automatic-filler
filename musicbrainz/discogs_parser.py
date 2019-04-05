@@ -101,11 +101,11 @@ def discogs_title(soup):
 
 def discogs_lable(soup):
     profile = soup.find("div", {"class": "profile"})
-    title = profile.findAll("div")
+    lable = profile.findAll("div")
 
-    for x in range(0, len(title)):
-        if "Label" in title[x].string:
-            out = title[x + 1].find("a")
+    for x in range(0, len(lable)):
+        if "Label" in lable[x].string:
+            out = lable[x + 1].find("a")
             return out.string
 
     return None
@@ -113,12 +113,12 @@ def discogs_lable(soup):
 
 def discogs_cat(soup):
     profile = soup.find("div", {"class": "profile"})
-    title = profile.findAll("div")
+    cat = profile.findAll("div")
 
-    for x in range(0, len(title)):
+    for x in range(0, len(cat)):
         try:
-            if "Label" in title[x].string:
-                out = title[x + 1].find("a").next_sibling.string
+            if "Label" in cat[x].string:
+                out = cat[x + 1].find("a").next_sibling.string
                 out = out.split("\n")
                 out = out[0]
                 out = out[4:len(out)]
@@ -129,14 +129,33 @@ def discogs_cat(soup):
     return None
 
 
+def discogs_country(soup):
+    profile = soup.find("div", {"class": "profile"})
+    country = profile.findAll("div")
+
+    for x in range(0, len(country)):
+        try:
+            if "Country" in country[x].string:
+                out = country[x + 1].find("a").string
+                out = out.split("\n")
+                print(out)
+                out = out[1]
+                out = out[16:len(out)]
+                return out
+        except TypeError:
+            continue
+
+    return None
+
+
 def discogs_date(soup):
     profile = soup.find("div", {"class": "profile"})
-    title = profile.findAll("div")
+    date = profile.findAll("div")
 
-    for x in range(0, len(title)):
+    for x in range(0, len(date)):
         try:
-            if "Released" in title[x].string:
-                out = title[x + 1].find("a")
+            if "Released" in date[x].string:
+                out = date[x + 1].find("a")
                 out = out.string.split("\n")
                 out = out[1]
                 out = out[16:len(out)]
@@ -157,6 +176,7 @@ def discogs_parser(link):  # change a bit to make it more modular
     album_title = discogs_title(soup)
     label = discogs_lable(soup)
     cat_no = discogs_cat(soup)
+    country = discogs_country(soup)
     date = discogs_date(soup)
 
     artist_list = soup.findAll("td", {"class": "tracklist_track_artists"})
