@@ -101,15 +101,17 @@ def discogs_title(soup):
 
 def discogs_lable(soup):
     profile = soup.find("div", {"class": "profile"})
-    title = profile.find("div", {"class": "head"})
-    if "Label" in title.string:
-        title = title.next_sibling
-        return title.string
-    else:
-        return None
+    title = profile.findAll("div")
+    for x in range(0, len(title)):
+        if "Label" in title[x].string:
+            print(title[x + 1])
+            out = title[x + 1].find("a")
+            return out.string
+
+    return None
 
 
-def discogs_parser(link): # change a bit to make it more modular
+def discogs_parser(link):  # change a bit to make it more modular
     r = requests.get(link)
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
@@ -118,8 +120,6 @@ def discogs_parser(link): # change a bit to make it more modular
 
     album_title = discogs_title(soup)
     label = discogs_lable(soup)
-
-    # print(label)
 
     artist_list = soup.findAll("td", {"class": "tracklist_track_artists"})
     title_list = soup.findAll("td", {"class": "track tracklist_track_title mini_playlist_track_has_artist"})
