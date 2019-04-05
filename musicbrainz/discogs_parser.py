@@ -95,6 +95,8 @@ def discogs_parser(link): # change a bit to make it more modular
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
 
+    print(soup)
+
     artist_list = soup.findAll("td", {"class": "tracklist_track_artists"})
     title_list = soup.findAll("td", {"class": "track tracklist_track_title mini_playlist_track_has_artist"})
     length_list = soup.findAll("td", {"class": "tracklist_track_duration"})
