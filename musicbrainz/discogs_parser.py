@@ -103,9 +103,12 @@ def discogs_lable(soup):
     lable = profile.findAll("div")
 
     for x in range(0, len(lable)):
-        if "Label" in lable[x].string:
-            out = lable[x + 1].find("a")
-            return out.string
+        try:
+            if "Label" in lable[x].string:
+                out = lable[x + 1].find("a")
+                return out.string
+        except TypeError:
+            continue
 
     return None
 
@@ -158,6 +161,9 @@ def discogs_date(soup):
                 out = out[1]
                 out = out[16:len(out)]
                 return out.split(" ")
+            elif "Year" in date[x].string:
+                out = date[x + 1].find("a")
+                return [out.string]
         except TypeError:
             continue
 
