@@ -102,6 +102,7 @@ def discogs_title(soup):
 def discogs_lable(soup):
     profile = soup.find("div", {"class": "profile"})
     title = profile.findAll("div")
+
     for x in range(0, len(title)):
         if "Label" in title[x].string:
             out = title[x + 1].find("a")
@@ -113,13 +114,35 @@ def discogs_lable(soup):
 def discogs_cat(soup):
     profile = soup.find("div", {"class": "profile"})
     title = profile.findAll("div")
+
     for x in range(0, len(title)):
-        if "Label" in title[x].string:
-            out = title[x + 1].find("a").next_sibling.string
-            out = out.split("\n")
-            out = out[0]
-            out = out[4:len(out)]
-            return out
+        try:
+            if "Label" in title[x].string:
+                out = title[x + 1].find("a").next_sibling.string
+                out = out.split("\n")
+                out = out[0]
+                out = out[4:len(out)]
+                return out
+        except TypeError:
+            continue
+
+    return None
+
+
+def discogs_date(soup):
+    profile = soup.find("div", {"class": "profile"})
+    title = profile.findAll("div")
+
+    for x in range(0, len(title)):
+        try:
+            if "Released" in title[x].string:
+                out = title[x + 1].find("a")
+                out = out.string.split("\n")
+                out = out[1]
+                out = out[16:len(out)]
+                return out.split(" ")
+        except TypeError:
+            continue
 
     return None
 
@@ -134,6 +157,7 @@ def discogs_parser(link):  # change a bit to make it more modular
     album_title = discogs_title(soup)
     label = discogs_lable(soup)
     cat_no = discogs_cat(soup)
+    date = discogs_date(soup)
 
     artist_list = soup.findAll("td", {"class": "tracklist_track_artists"})
     title_list = soup.findAll("td", {"class": "track tracklist_track_title mini_playlist_track_has_artist"})
