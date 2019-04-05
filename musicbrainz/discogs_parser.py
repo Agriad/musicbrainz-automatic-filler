@@ -90,12 +90,36 @@ def discogs_single_album_parser(artist_list, title_list, length_list):
     return [modified_artist, modified_title, modified_length]
 
 
+def discogs_title(soup):
+    profile = soup.find("h1", {"id": "profile_title"})
+    title = profile.findAll("span")
+    title = title[2].string.split("\n")
+    title = title[1]
+    title = title[44:len(title)]
+    return title
+
+
+def discogs_lable(soup):
+    profile = soup.find("div", {"class": "profile"})
+    title = profile.find("div", {"class": "head"})
+    if "Label" in title.string:
+        title = title.next_sibling
+        return title.string
+    else:
+        return None
+
+
 def discogs_parser(link): # change a bit to make it more modular
     r = requests.get(link)
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
 
-    print(soup)
+    # print(soup)
+
+    album_title = discogs_title(soup)
+    label = discogs_lable(soup)
+
+    # print(label)
 
     artist_list = soup.findAll("td", {"class": "tracklist_track_artists"})
     title_list = soup.findAll("td", {"class": "track tracklist_track_title mini_playlist_track_has_artist"})
