@@ -10,11 +10,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+            <state relative-caret-position="60">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -22,13 +22,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/robo_browser.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/intro.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state relative-caret-position="240">
+              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/discogs_parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-397">
+              <caret line="99" column="24" lean-forward="true" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
               <folding>
-                <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -37,8 +46,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/printer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/robo_browser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -46,19 +64,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/misc_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="113">
+              <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/song_list.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -73,6 +87,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>discogs_title_parser</find>
+      <find>music</find>
     </findStrings>
     <replaceStrings>
       <replace>title_parser</replace>
@@ -90,14 +105,15 @@
         <option value="$PROJECT_DIR$/misc_data.py" />
         <option value="$PROJECT_DIR$/input_parser.py" />
         <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/input_parser.py" />
-        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/misc_data.py" />
-        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/main.py" />
-        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/intro.py" />
         <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/website_parser.py" />
         <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/discog_parser.py" />
         <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/printer.py" />
-        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/discogs_parser.py" />
         <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/requirements.txt" />
+        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/song_list.txt" />
+        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/intro.py" />
+        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/misc_data.py" />
+        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/main.py" />
+        <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/discogs_parser.py" />
         <option value="$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/robo_browser.py" />
       </list>
     </option>
@@ -278,12 +294,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -345,26 +361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/discog_parser.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/discogs_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="67" column="54" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/input_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -375,50 +371,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/intro.py">
+    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/song_list.txt">
+    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/discog_parser.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/musicbrainz/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        <state relative-caret-position="382">
+          <caret line="241" selection-start-line="241" selection-end-line="241" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/geckodriver.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/song_list.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/printer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/discogs_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-397">
+          <caret line="99" column="24" lean-forward="true" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/misc_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="113">
+          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/robo_browser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/intro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Github/musicbrainz-automatic-filler/musicbrainz/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
