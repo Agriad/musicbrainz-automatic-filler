@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 from misc_data import AlbumData
 
 
+# Fills in information into album object.
+# In: string, string, string, AlbumData object
+# Out: AlbumData object
 def music_object_maker(artist, title, length, album):
     array_length = len(title)
 
@@ -12,6 +15,9 @@ def music_object_maker(artist, title, length, album):
     return album
 
 
+# Finds the artist for each song in song list.
+# In: Beautifulsoup object
+# Out: string
 def discogs_artist_parser(artist):
     final_artist = ""
     new_artist = artist.findAll("a")
@@ -29,6 +35,9 @@ def discogs_artist_parser(artist):
     return final_artist
 
 
+# Finds the titles for each song in the song list.
+# In: Beautifulsoup object
+# Out: string
 def discogs_title_parser(title):
     try:
         new_title = title.find("span", {"class": "tracklist_track_title"}).string
@@ -37,11 +46,17 @@ def discogs_title_parser(title):
     return new_title
 
 
+# Finds the length for each song in the song list.
+# In: Beautifulsoup object
+# Out: string
 def discogs_length_parser(length):
     new_length = length.find("span").string
     return new_length
 
 
+# Refines song list the data into strings that can be worked with.
+# In: list of Beautifulsoup object, list of Beautifulsoup object, list of Beautifulsoup object
+# Out: List of string
 def discogs_album_parser(artist_list, title_list, length_list):
     array_length = len(artist_list)
     modified_artist = []
@@ -56,6 +71,9 @@ def discogs_album_parser(artist_list, title_list, length_list):
     return [modified_artist, modified_title, modified_length]
 
 
+# Checks if the artist or title field is null.
+# In: list, list
+# Out: boolean
 def discogs_check_null(artist, title):
     if artist == [] or title == []:
         return False
@@ -63,18 +81,27 @@ def discogs_check_null(artist, title):
         return True
 
 
+# Finds the artist if the album is created by one artist.
+# In: Beautifulsoup object
+# Out: string
 def discogs_single_artist_parser(soup):
     profile = soup.find("h1", {"id": "profile_title"})
     artist = profile.find("a").string
     return artist
 
 
+# Finds the song titles in the songlist.
+# In: Beautifulsoup object
+# Out: list of string
 def discogs_single_title_parser(soup):
     playlist = soup.find("table", {"class": "playlist"})
     titles = playlist.findAll("a")
     return titles
 
 
+# Refines song list the data into strings that can be worked with.
+# In: list of Beautifulsoup object, list of Beautifulsoup object, list of Beautifulsoup object
+# Out: List of string
 def discogs_single_album_parser(artist_list, title_list, length_list):
     array_length = len(title_list)
     modified_artist = []
@@ -89,12 +116,18 @@ def discogs_single_album_parser(artist_list, title_list, length_list):
     return [modified_artist, modified_title, modified_length]
 
 
+# Finds the album artist.
+# In: Beautifulsoup object
+# Out: string
 def discogs_album_artist(soup):
     profile = soup.find("h1", {"id": "profile_title"})
     artist = profile.find("a")
     return artist.string
 
 
+# Finds the title of the album.
+# In: Beautifulsoup object
+# Out: string
 def discogs_title(soup):
     profile = soup.find("h1", {"id": "profile_title"})
     title = profile.findAll("span")
@@ -104,6 +137,9 @@ def discogs_title(soup):
     return title
 
 
+# Finds the label of the album.
+# In: Beautifulsoup object
+# Out: string, None
 def discogs_lable(soup):
     profile = soup.find("div", {"class": "profile"})
     lable = profile.findAll("div")
@@ -119,6 +155,9 @@ def discogs_lable(soup):
     return None
 
 
+# Finds the category number of the album.
+# In: Beautifulsoup object
+# Out: string, nNne
 def discogs_cat(soup):
     profile = soup.find("div", {"class": "profile"})
     cat = profile.findAll("div")
@@ -137,6 +176,9 @@ def discogs_cat(soup):
     return None
 
 
+# Finds the country of the album.
+# In: Beautifulsoup object
+# Out: string, None
 def discogs_country(soup):
     profile = soup.find("div", {"class": "profile"})
     country = profile.findAll("div")
@@ -155,6 +197,9 @@ def discogs_country(soup):
     return None
 
 
+# Finds the release date of the album.
+# In: Beautifulsoup object
+# Out: list of string, None
 def discogs_date(soup):
     profile = soup.find("div", {"class": "profile"})
     date = profile.findAll("div")
@@ -176,6 +221,9 @@ def discogs_date(soup):
     return None
 
 
+# Parse the discogs link
+# In: string
+# Out: AlbumData object
 def discogs_parser(link):  # change a bit to make it more modular
     r = requests.get(link)
     data = r.text
@@ -215,5 +263,3 @@ def discogs_parser(link):  # change a bit to make it more modular
 
         album = music_object_maker(album_as_text[0], album_as_text[1], album_as_text[2], album)
         return album
-
-
