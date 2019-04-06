@@ -1,8 +1,8 @@
-from user_input import UserInput
+from misc_data import UserInput
 
 
 def user_browser():
-    print("Choose between:\nFirefox \nChrome \nEdge")
+    print("Choose between:\nFirefox \nChrome")
     user_browser_input = input("Type here: ")
     return user_browser_input
 
@@ -14,17 +14,20 @@ def user_website():
 
 
 def intro():
-    user_browser_input = user_browser()
-    this_user = UserInput(user_browser_input)
+    # user_browser_input = user_browser()
+    # this_user = UserInput(user_browser_input)
+    this_user = UserInput("nothing")
+
+    username = input("Musicbrainz username: ")
+    password = input("Musicbrainz password: ")
+
+    this_user.add_credentials(username, password)
 
     print("First input is given highest priority")
     user_website_input = user_website()
 
-    while user_website_input != "end":
+    while user_website_input != "":
         this_user.add_website(user_website_input)
         user_website_input = user_website()
-
-    # print(this_user.user_browser)
-    # print(this_user.user_websites)
 
     return this_user
