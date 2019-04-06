@@ -89,6 +89,12 @@ def discogs_single_album_parser(artist_list, title_list, length_list):
     return [modified_artist, modified_title, modified_length]
 
 
+def discogs_album_artist(soup):
+    profile = soup.find("h1", {"id": "profile_title"})
+    artist = profile.find("a")
+    return artist.string
+
+
 def discogs_title(soup):
     profile = soup.find("h1", {"id": "profile_title"})
     title = profile.findAll("span")
@@ -175,8 +181,9 @@ def discogs_parser(link):  # change a bit to make it more modular
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
 
-    # print(soup)
+    print(soup)
 
+    album_artist = discogs_album_artist(soup)
     album_title = discogs_title(soup)
     label = discogs_lable(soup)
     cat_no = discogs_cat(soup)
@@ -184,6 +191,7 @@ def discogs_parser(link):  # change a bit to make it more modular
     date = discogs_date(soup)
 
     album = AlbumData()
+    album.add_artist(album_artist)
     album.add_title(album_title)
     album.add_label(label)
     album.add_cat(cat_no)

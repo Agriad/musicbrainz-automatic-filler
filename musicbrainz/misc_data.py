@@ -10,6 +10,9 @@ class UserInput:
     def __init__(self, user_browser):
         self.user_browser = user_browser
 
+    def change_browser(self, browser):
+        self.user_browser = browser
+
     def add_website(self, website):
         self.user_websites.append(website)
 
@@ -30,6 +33,7 @@ class MusicData:
 
 
 class AlbumData:
+    artist = ""
     title = ""
     label = ""
     cat_no = ""
@@ -42,6 +46,9 @@ class AlbumData:
 
     def add_song(self, artist, title, length):
         self.songs.append(MusicData(artist, title, length))
+
+    def add_artist(self, artist):
+        self.artist = artist
 
     def add_title(self, title):
         self.title = title

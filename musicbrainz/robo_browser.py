@@ -3,27 +3,26 @@ from selenium.webdriver.support.ui import Select
 
 
 def login(driver, user):
-    # driver.get("https://musicbrainz.org/login?uri=%2F")
-    driver.get("https://test.musicbrainz.org/login?uri=%2F")  # test
+    driver.get("https://musicbrainz.org/login?uri=%2F")
     element = driver.find_element_by_name("username")
     element.send_keys(user.user_username)
     element = driver.find_element_by_name("password")
     element.send_keys(user.user_password)
-    element = driver.find_element_by_xpath("/html/body/div[4]/form/div[4]/span")
+    element = driver.find_element_by_xpath("/html/body/div[2]/form/div[4]/span/button")
     element.click()
 
 
 def navigate_home(driver):
-    driver.get("https://test.musicbrainz.org/release/add")  # test
+    driver.get("https://musicbrainz.org/release/add")
 
 
 # def input_release(driver, album):
 
 
 def input_tracklist(driver, album):
-    element = driver.find_element_by_xpath("/html/body/div[4]/div[1]/ul/li[3]")
+    element = driver.find_element_by_xpath("/html/body/div[2]/div[1]/ul/li[3]")
     element.click()
-    element = driver.find_element_by_xpath("/html/body/div[8]/div[2]/div[1]/textarea")
+    element = driver.find_element_by_xpath("/html/body/div[6]/div[2]/div[1]/textarea")
     counter = 1
 
     for music in album.songs:
@@ -39,8 +38,7 @@ def input_tracklist(driver, album):
 
         counter += 1
 
-    # element = driver.find_element_by_id("parse-tracks")
-    element = driver.find_element_by_xpath("/html/body/div[8]/div[2]/div[4]/button[2]")
+    element = driver.find_element_by_xpath("/html/body/div[6]/div[2]/div[4]/button[2]")
     element.click()
     element = driver.find_element_by_id("format-unknown")
     element.click()
@@ -58,11 +56,18 @@ def browser_choice(user):
 
 
 def input_info(driver, album):
+    input_artist(driver, album.artist)
     input_title(driver, album.title)
     input_label(driver, album.label)
     input_cat(driver, album.cat_no)
     input_country(driver, album.country)
     input_date(driver, album.date)
+
+
+def input_artist(driver, artist):
+    element = driver.find_element_by_xpath(
+        "/html/body/div[2]/div[1]/div[1]/div[1]/fieldset[1]/table/tbody/tr[3]/td[2]/table/tbody/tr/td[1]/span/input")
+    element.send_keys(artist)
 
 
 def input_title(driver, title):
@@ -99,13 +104,13 @@ def input_date(driver, date):
 def input_day(driver, date):
     if len(date) == 3:
         element = driver.find_element_by_xpath(
-            "/html/body/div[4]/div[1]/div[1]/div[1]/fieldset[2]/table/tbody/tr[1]/td[2]/span/input[3]")
+            "/html/body/div[2]/div[1]/div[1]/div[1]/fieldset[2]/table/tbody/tr[1]/td[2]/span/input[3]")
         element.send_keys(date[0])
 
 
 def input_month(driver, date):
     element = driver.find_element_by_xpath(
-        "/html/body/div[4]/div[1]/div[1]/div[1]/fieldset[2]/table/tbody/tr[1]/td[2]/span/input[2]")
+        "/html/body/div[2]/div[1]/div[1]/div[1]/fieldset[2]/table/tbody/tr[1]/td[2]/span/input[2]")
     if len(date) == 2:
         if not isinstance(date[0], int):
             date[0] = translate_month(date[0])
@@ -154,6 +159,11 @@ def translate_month(month):
         return "12"
 
 
+def return_back(driver):
+    element = driver.find_element_by_xpath("/html/body/div[2]/div[1]/ul/li[1]")
+    element.click()
+
+
 def robo_browser(album, user):
     driver = webdriver.Firefox(
         executable_path=
@@ -163,3 +173,4 @@ def robo_browser(album, user):
     navigate_home(driver)
     input_info(driver, album)
     input_tracklist(driver, album)
+    return_back(driver)
