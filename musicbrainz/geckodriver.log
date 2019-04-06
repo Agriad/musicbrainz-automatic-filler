@@ -471,3 +471,13 @@ JavaScript error: https://staticbrainz.org/MB/scripts/release-editor-8785ed3a45.
 1554542619734	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
 1554542621171	Marionette	INFO	Listening on port 57490
 1554542621277	Marionette	WARN	TLS certificate errors will be ignored for this session
+1554542735388	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/2k/3p9ljjzd7kdg7w4kx3lk11x00000gn/T/rust_mozprofile.xI6ETTtck4uW"
+1554542735901	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1554542735901	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1554542735901	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1554542737340	Marionette	INFO	Listening on port 57566
+1554542737441	Marionette	WARN	TLS certificate errors will be ignored for this session
+1554542817944	Marionette	INFO	Stopped listening on port 57566
+1554542818377	Marionette	INFO	Stopped listening on port 57490
+1554542818620	Marionette	INFO	Stopped listening on port 57411
+1554542818852	Marionette	INFO	Stopped listening on port 57239

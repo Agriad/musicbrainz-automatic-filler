@@ -1,6 +1,7 @@
 website_list = ["www.discogs.com"]
 
 
+# Used to store user information and websites to parse.
 class UserInput:
     user_browser = ""
     user_websites = []
@@ -21,6 +22,7 @@ class UserInput:
         self.user_password = password
 
 
+# Used to store music information.
 class MusicData:
     artist = ""
     title = ""
@@ -32,6 +34,7 @@ class MusicData:
         self.length = length
 
 
+# Used to store album information.
 class AlbumData:
     artist = ""
     title = ""
@@ -66,16 +69,16 @@ class AlbumData:
         self.date = date
 
 
-class AlbumDataDone:
-    songs = [MusicData("BOB", "a song", "9.99")]
-
-
-class UserInputDone:
-    user_browser = ""
-    user_websites = ["https://www.discogs.com/Various-The-Best-Of-Hardcore-TanoC/release/1030045"]
-    user_username = ""
-    user_password = ""
-
-    def __init__(self, username, password):
-        self.user_username = username
-        self.user_password = password
+# class AlbumDataDone:
+#     songs = [MusicData("BOB", "a song", "9.99")]
+#
+#
+# class UserInputDone:
+#     user_browser = ""
+#     user_websites = ["https://www.discogs.com/Various-The-Best-Of-Hardcore-TanoC/release/1030045"]
+#     user_username = ""
+#     user_password = ""
+#
+#     def __init__(self, username, password):
+#         self.user_username = username
+#         self.user_password = password
