@@ -86,8 +86,20 @@ def discogs_check_null(artist, title):
 # Out: string
 def discogs_single_artist_parser(soup):
     profile = soup.find("h1", {"id": "profile_title"})
-    artist = profile.find("a").string
-    return artist
+    artist = profile.findAll("a")
+    counter = 0
+    final_artist = ""
+
+    for text in artist:
+        counter += 1
+
+        if counter > 1:
+            final_artist += " and "
+
+        new_text = text.string
+        final_artist += new_text
+
+    return final_artist
 
 
 # Finds the song titles in the songlist.
@@ -121,8 +133,23 @@ def discogs_single_album_parser(artist_list, title_list, length_list):
 # Out: string
 def discogs_album_artist(soup):
     profile = soup.find("h1", {"id": "profile_title"})
-    artist = profile.find("a")
-    return artist.string
+    try:
+        artist = profile.findAll("a")
+        counter = 0
+        final_artist = ""
+
+        for text in artist:
+            counter += 1
+
+            if counter > 1:
+                final_artist += " and "
+
+            new_text = text.string
+            final_artist += new_text
+
+        return final_artist
+    except AttributeError:
+        return None
 
 
 # Finds the title of the album.
@@ -131,7 +158,7 @@ def discogs_album_artist(soup):
 def discogs_title(soup):
     profile = soup.find("h1", {"id": "profile_title"})
     title = profile.findAll("span")
-    title = title[2].string.split("\n")
+    title = title[len(title) - 1].string.split("\n")
     title = title[1]
     title = title[44:len(title)]
     return title
@@ -147,8 +174,19 @@ def discogs_lable(soup):
     for x in range(0, len(lable)):
         try:
             if "Label" in lable[x].string:
-                out = lable[x + 1].find("a")
-                return out.string
+                out = lable[x + 1].findAll("a")
+                counter = 0
+                final_label = ""
+
+                for text in out:
+                    counter += 1
+
+                    if counter > 1:
+                        final_label += " and "
+
+                    new_text = text.string
+                    final_label += new_text
+                return final_label
         except TypeError:
             continue
 
