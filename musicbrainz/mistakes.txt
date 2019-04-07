@@ -1,0 +1,2 @@
+Forgot that you do not need to return objects if they are instantiated and already have pointers/variables assigned to
+it. Remembered when doing tanoc_parser.py

@@ -222,14 +222,14 @@ def discogs_date(soup):
 
 
 # Parse the discogs link
-# In: string
+# In: string, AlbumData object
 # Out: AlbumData object
-def discogs_parser(link):  # change a bit to make it more modular
+def discogs_parser(link, album):  # change a bit to make it more modular
     r = requests.get(link)
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
 
-    print(soup)
+    #print(soup)
 
     album_artist = discogs_album_artist(soup)
     album_title = discogs_title(soup)
@@ -238,7 +238,6 @@ def discogs_parser(link):  # change a bit to make it more modular
     country = discogs_country(soup)
     date = discogs_date(soup)
 
-    album = AlbumData()
     album.add_artist(album_artist)
     album.add_title(album_title)
     album.add_label(label)
