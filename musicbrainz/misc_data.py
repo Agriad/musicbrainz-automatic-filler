@@ -45,10 +45,22 @@ class AlbumData:
     songs = []
 
     def __init__(self):
+        self.artist = None
+        self.title = None
+        self.label = None
+        self.cat_no = None
+        self.country = None
+        self.date = None
         self.songs = []
 
     def add_song(self, artist, title, length):
         self.songs.append(MusicData(artist, title, length))
+
+    def modify_song_date(self, index, length):
+        self.songs[index] = MusicData(self.songs[index].artist, self.songs[index].title, length)
+
+    def add_song_list(self, song_list):
+        self.songs = song_list
 
     def add_artist(self, artist):
         self.artist = artist

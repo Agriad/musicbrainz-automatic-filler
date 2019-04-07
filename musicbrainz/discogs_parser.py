@@ -73,7 +73,7 @@ def discogs_album_parser(artist_list, title_list, length_list):
 
 # Checks if the artist or title field is null.
 # In: list, list
-# Out: boolean
+# Out: bool
 def discogs_check_null(artist, title):
     if artist == [] or title == []:
         return False
