@@ -1,6 +1,4 @@
-website_list = ["www.discogs.com"]
-
-
+# Used to store user information and websites to parse.
 class UserInput:
     user_browser = ""
     user_websites = []
@@ -10,14 +8,20 @@ class UserInput:
     def __init__(self, user_browser):
         self.user_browser = user_browser
 
+    def change_browser(self, browser):
+        self.user_browser = browser
+
     def add_website(self, website):
         self.user_websites.append(website)
 
-    def add_credentials(self, username, password):
+    def add_username(self, username):
         self.user_username = username
+
+    def add_password(self, password):
         self.user_password = password
 
 
+# Used to store music information.
 class MusicData:
     artist = ""
     title = ""
@@ -29,7 +33,9 @@ class MusicData:
         self.length = length
 
 
+# Used to store album information.
 class AlbumData:
+    artist = ""
     title = ""
     label = ""
     cat_no = ""
@@ -38,10 +44,25 @@ class AlbumData:
     songs = []
 
     def __init__(self):
+        self.artist = None
+        self.title = None
+        self.label = None
+        self.cat_no = None
+        self.country = None
+        self.date = None
         self.songs = []
 
     def add_song(self, artist, title, length):
         self.songs.append(MusicData(artist, title, length))
+
+    def modify_song_date(self, index, length):
+        self.songs[index] = MusicData(self.songs[index].artist, self.songs[index].title, length)
+
+    def add_song_list(self, song_list):
+        self.songs = song_list
+
+    def add_artist(self, artist):
+        self.artist = artist
 
     def add_title(self, title):
         self.title = title
@@ -59,13 +80,23 @@ class AlbumData:
         self.date = date
 
 
+class ListAlbum:
+    album = []
+
+    def __init__(self):
+        self.album = []
+
+    def add_album(self, album):
+        self.album.append(album)
+
+
 class AlbumDataDone:
     songs = [MusicData("BOB", "a song", "9.99")]
 
 
 class UserInputDone:
     user_browser = ""
-    user_websites = ["https://www.discogs.com/Various-The-Best-Of-Hardcore-TanoC/release/1030045"]
+    user_websites = ["https://www.tanocstore.net/shopdetail/000000001786/TANOC_CREW/page1/recommend/"]
     user_username = ""
     user_password = ""
 

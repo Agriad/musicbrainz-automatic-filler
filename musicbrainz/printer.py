@@ -1,3 +1,8 @@
+
+
+# Prints out the album song list with title, artist, length.
+# In: AlbumData object
+# Out: song_list.txt
 def printer(album):
     file = open("song_list.txt", "w+")
     counter = 1
