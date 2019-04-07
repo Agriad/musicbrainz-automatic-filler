@@ -1,0 +1,18 @@
+username:
+password:
+
+# Information
+# This is how you fill in what the program will need. Comment is started with # per line
+# First part is Musicbrainz username and password if you do not want to put it through the command line
+# Link 1 is prioritized over link 2, link 2 over link 3, and so on
+# To add more websites just add it in the next line
+# When typing your input you do not need the "" between the text
+# Do not add newlines on top
+#
+# Template
+# username: "username"
+# password: "password"
+#
+# "link 1"
+# "link 2"
+# "link 3"

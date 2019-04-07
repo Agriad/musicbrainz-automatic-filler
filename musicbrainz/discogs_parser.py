@@ -229,7 +229,7 @@ def discogs_parser(link, album):  # change a bit to make it more modular
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
 
-    #print(soup)
+    print(soup)
 
     album_artist = discogs_album_artist(soup)
     album_title = discogs_title(soup)

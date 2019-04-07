@@ -1,6 +1,3 @@
-website_list = ["www.discogs.com"]
-
-
 # Used to store user information and websites to parse.
 class UserInput:
     user_browser = ""
@@ -17,8 +14,10 @@ class UserInput:
     def add_website(self, website):
         self.user_websites.append(website)
 
-    def add_credentials(self, username, password):
+    def add_username(self, username):
         self.user_username = username
+
+    def add_password(self, password):
         self.user_password = password
 
 

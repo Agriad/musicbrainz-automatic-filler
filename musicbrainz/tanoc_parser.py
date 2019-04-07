@@ -36,7 +36,7 @@ def tanoc_parser(link, album):
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
 
-    #print(soup)
+    print(soup)
 
     album_title = tanoc_title(soup)
     label_list = tanoc_label(soup)
