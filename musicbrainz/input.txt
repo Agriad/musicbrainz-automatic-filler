@@ -1,8 +1,6 @@
 username:
 password: 
 
-https://www.discogs.com/Daft-Punk-Alive-2007/master/27126
-
 # Information
 # This is how you fill in what the program will need. Comment is started with # per line
 # First part is Musicbrainz username and password if you do not want to put it through the command line
