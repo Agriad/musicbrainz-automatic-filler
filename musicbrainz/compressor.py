@@ -1,6 +1,9 @@
 from misc_data import AlbumData
 
 
+# Compresses multiple songs into a single song with merged data depending on priority
+# In: AlbumList object, AlbumData object
+# out:
 def song_compressor(album_list, combined_album):
     boolean = True
     counter = 0
@@ -16,6 +19,9 @@ def song_compressor(album_list, combined_album):
         boolean = False
 
 
+# Compresses multiple albums into a single album with merged data depending on priority
+# In: AlbumList object
+# out: AlbumData object
 def compressor(album_list):
     combined_album = AlbumData()
     for album in album_list.album:

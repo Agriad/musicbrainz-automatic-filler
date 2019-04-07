@@ -3,13 +3,9 @@ from discogs_parser import discogs_parser
 from tanoc_parser import tanoc_parser
 
 
-# def check_website(website, main_website_list):
-#     for x in main_website_list:
-#         if x in website:  # might need to change
-#             return website
-#     return False
-
-
+# Finds the corresponding code for the links given.
+# In: string, AlbumData object
+# out: method, bool
 def method_finder(link, album):
     if "www.discogs.com" in link:
         return discogs_parser(link, album)
@@ -19,12 +15,9 @@ def method_finder(link, album):
         return False
 
 
-# def input_parser(user_object):
-#     for websites in user_object.user_websites:
-#         if check_website(websites, website_list):
-#             return method_finder(websites)  # might change
-
-
+# Takes the websites to be parsed and put the info into an object.
+# In: UserInput object, ListAlbum object
+# out:
 def input_parser(user_object, album_list):
     for websites in user_object.user_websites:
         album_list.add_album(method_finder(websites, AlbumData()))

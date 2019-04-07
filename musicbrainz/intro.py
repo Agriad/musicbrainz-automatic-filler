@@ -17,6 +17,9 @@ def user_website():
     return user_website_input
 
 
+# Checks if the user has already put in their username and password.
+# In: UserInput object
+# out:
 def check_credential(user):
     file = open("/Users/Justin/Desktop/Games/Programming/Github/musicbrainz-automatic-filler/musicbrainz/input.txt",
                 "r")
@@ -33,6 +36,9 @@ def check_credential(user):
     user.add_password(password)
 
 
+# Checks if the uer has put in any links to parse.
+# In: UserInput object
+# out:
 def check_link(user):
     file = open("/Users/Justin/Desktop/Games/Programming/Github/musicbrainz-automatic-filler/musicbrainz/input.txt",
                 "r")
