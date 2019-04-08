@@ -1,5 +1,5 @@
-username:
-password: 
+username: 
+password:
 
 # Information
 # This is how you fill in what the program will need. Comment is started with # per line

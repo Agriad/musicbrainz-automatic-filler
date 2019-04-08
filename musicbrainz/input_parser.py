@@ -1,6 +1,7 @@
 from misc_data import AlbumData
 from discogs_parser import discogs_parser
 from tanoc_parser import tanoc_parser
+from diverse_parser import diverse_parser
 
 
 # Finds the corresponding code for the links given.
@@ -11,6 +12,8 @@ def method_finder(link, album):
         return discogs_parser(link, album)
     elif "www.tanocstore.net" in link:
         return tanoc_parser(link, album)
+    elif "diverse.direct" in link:
+        return diverse_parser(link, album)
     else:
         return False
 

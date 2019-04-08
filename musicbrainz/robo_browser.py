@@ -82,9 +82,11 @@ def input_info(driver, album):
 # In: webdriver, string
 # Out:
 def input_artist(driver, artist):
-    element = driver.find_element_by_xpath(
-        "/html/body/div[2]/div[1]/div[1]/div[1]/fieldset[1]/table/tbody/tr[3]/td[2]/table/tbody/tr/td[1]/span/input")
-    element.send_keys(artist)
+    if artist is not None:
+        element = driver.find_element_by_xpath(
+            "/html/body/div[2]/div[1]/div[1]/div[1]/fieldset[1]/"
+            "table/tbody/tr[3]/td[2]/table/tbody/tr/td[1]/span/input")
+        element.send_keys(artist)
 
 
 # Takes in data and puts in the title in Musicbrainz.
