@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-# Finds the album title
+# Finds the album title.
 # In: Beautifulsoup object
 # Out: string
 def tanoc_title(soup):
@@ -11,7 +11,7 @@ def tanoc_title(soup):
     return title.string
 
 
-# Finds the label
+# Finds the label.
 # In: Beautifulsoup object
 # Out: string
 def tanoc_label(soup):
@@ -20,7 +20,7 @@ def tanoc_label(soup):
     return label.string.split(" / ")
 
 
-# Finds the dics whick can contain multiple track list
+# Finds the dics whick can contain multiple track list.
 # In: Beautifulsoup object
 # Out: string
 def tanoc_disc(soup, album):
@@ -31,9 +31,9 @@ def tanoc_disc(soup, album):
         tanoc_tracklist(tracklist, album)
 
 
-# Finds the track list and songs in it
-# In: Beautifulsoup object
-# Out: string
+# Finds the track list and songs in it.
+# In: Beautifulsoup object, AlbumData object
+# Out:
 def tanoc_tracklist(soup, album):
     song_list = soup.findAll("tr")
 
@@ -42,7 +42,7 @@ def tanoc_tracklist(soup, album):
         album.add_song(info[3].string, info[1].string, None)
 
 
-# Parse the tanocstore link
+# Parses the tanocstore link.
 # In: string, AlbumData object
 # Out: AlbumData object
 def tanoc_parser(link, album):

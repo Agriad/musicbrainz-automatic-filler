@@ -3,18 +3,27 @@ from bs4 import BeautifulSoup
 import lxml
 
 
+# Finds the album title.
+# In: Beautifulsoup object
+# Out: string
 def diverse_title(soup):
     element = soup.find("div", {"class": "xfd_none"})
     title = element.find("h2")
     return title.string
 
 
+# Finds the label.
+# In: Beautifulsoup object
+# Out: string
 def diverse_label(soup):
     element = soup.find("div", {"class": "cw clearfix"})
     label = element.find("a")
     return label.string
 
 
+# Finds the category number.
+# In: Beautifulsoup object
+# Out: string
 def diverse_cat(soup):
     element = soup.find("dl", {"class": "clearfix"})
     header = element.findAll("dt")
@@ -29,6 +38,9 @@ def diverse_cat(soup):
     return None
 
 
+# Finds the release date of the album.
+# In: Beautifulsoup object
+# Out: list of string, None
 def diverse_date(soup):
     element = soup.find("dl", {"class": "clearfix"})
     header = element.findAll("dt")
@@ -49,6 +61,9 @@ def diverse_date(soup):
     return None
 
 
+# Finds the track list and songs in it
+# In: Beautifulsoup object, AlbumData object
+# Out:
 def diverse_tracklist(data, album):
     soup = BeautifulSoup(data, "lxml")  # using lxml as the html is broken and causes issues
     element = soup.find("div", {"class": "left fl"})
@@ -62,6 +77,9 @@ def diverse_tracklist(data, album):
         album.add_song(artist, title, None)
 
 
+# Parses the diverse direct link
+# In: string, AlbumData object
+# Out: AlbumData object
 def diverse_parser(link, album):
     r = requests.get(link)
     data = r.text

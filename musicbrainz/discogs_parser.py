@@ -259,7 +259,7 @@ def discogs_date(soup):
     return None
 
 
-# Parse the discogs link
+# Parses the discogs link
 # In: string, AlbumData object
 # Out: AlbumData object
 def discogs_parser(link, album):  # change a bit to make it more modular
