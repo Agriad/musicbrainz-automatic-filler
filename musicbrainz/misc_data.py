@@ -104,17 +104,3 @@ class ListAlbum:
     def add_album(self, album):
         self.album.append(album)
 
-
-class AlbumDataDone:
-    songs = [MusicData("BOB", "a song", "9.99")]
-
-
-class UserInputDone:
-    user_browser = ""
-    user_websites = ["https://www.tanocstore.net/shopdetail/000000001786/TANOC_CREW/page1/recommend/"]
-    user_username = ""
-    user_password = ""
-
-    def __init__(self, username, password):
-        self.user_username = username
-        self.user_password = password

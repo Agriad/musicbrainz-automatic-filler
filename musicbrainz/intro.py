@@ -1,13 +1,6 @@
 from misc_data import UserInput
 
 
-# Unused, was supposed to be possible to choose web browser.
-def user_browser():
-    print("Choose between:\nFirefox \nChrome")
-    user_browser_input = input("Type here: ")
-    return user_browser_input
-
-
 # Takes in websites that is going to be parsed.
 # In: website links
 # out: string

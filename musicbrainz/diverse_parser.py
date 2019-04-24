@@ -72,16 +72,13 @@ def diverse_tracklist(data, album):
     for songs in tracklist:
         info = songs.findAll("td")
         artist = info[2].string
-        # print(artist)
         real_title = []
         title = info[1].string
+
         for letter in title:
             if letter == " " or letter.isalnum():
                 real_title.append(letter)
-        # title = title.split("\n")
-        # title = title[1]
-        # title = title[3:len(title) - 1]
-        # title = title[2:len(title) - 2]
+
         album.add_song(artist, "".join(real_title), None)
 
 
