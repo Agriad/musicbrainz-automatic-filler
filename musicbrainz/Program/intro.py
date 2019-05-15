@@ -14,7 +14,7 @@ def user_website():
 # In: UserInput object
 # out:
 def check_credential(user):
-    file = open("/Users/Justin/Desktop/Games/Programming/Github/musicbrainz-automatic-filler/musicbrainz/input.txt",
+    file = open("/Users/Justin/Desktop/Games/Programming/Github/musicbrainz-automatic-filler/musicbrainz/Text/input.txt",
                 "r")
     content = file.read()
     lines = content.split("\n")
@@ -33,7 +33,7 @@ def check_credential(user):
 # In: UserInput object
 # out:
 def check_link(user):
-    file = open("/Users/Justin/Desktop/Games/Programming/Github/musicbrainz-automatic-filler/musicbrainz/input.txt",
+    file = open("/Users/Justin/Desktop/Games/Programming/Github/musicbrainz-automatic-filler/musicbrainz/Text/input.txt",
                 "r")
     content = file.read()
 
