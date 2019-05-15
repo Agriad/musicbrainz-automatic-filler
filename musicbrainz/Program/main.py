@@ -1,9 +1,9 @@
-from intro import intro
-from input_parser import input_parser
-from compressor import compressor
-from printer import printer
-from robo_browser import robo_browser
-from misc_data import ListAlbum
+from Program.intro import intro
+from Program.input_parser import input_parser
+from Program.compressor import compressor
+from Program.printer import printer
+from Program.robo_browser import robo_browser
+from Object.misc_data import ListAlbum
 
 
 # This is what runs the program. It calls multiple methods from different files to do so.

@@ -1,4 +1,4 @@
-from misc_data import UserInput
+from Object.misc_data import UserInput
 
 
 # Takes in websites that is going to be parsed.

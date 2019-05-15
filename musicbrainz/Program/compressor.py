@@ -1,4 +1,4 @@
-from misc_data import AlbumData
+from Object.misc_data import AlbumData
 
 
 # Compresses multiple songs into a single song with merged data depending on priority

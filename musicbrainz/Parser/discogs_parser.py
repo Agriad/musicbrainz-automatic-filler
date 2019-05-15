@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-from misc_data import AlbumData
 
 
 # Fills in information into album object.

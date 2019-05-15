@@ -1,7 +1,7 @@
-from misc_data import AlbumData
-from discogs_parser import discogs_parser
-from tanoc_parser import tanoc_parser
-from diverse_parser import diverse_parser
+from Object.misc_data import AlbumData
+from Parser.discogs_parser import discogs_parser
+from Parser.tanoc_parser import tanoc_parser
+from Parser.diverse_parser import diverse_parser
 
 
 # Finds the corresponding code for the links given.
