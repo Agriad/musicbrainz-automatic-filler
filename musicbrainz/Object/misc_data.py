@@ -20,7 +20,7 @@ class UserInput:
     def add_username(self, username):
         self.user_username = username
 
-    # Adds a passwrod to use
+    # Adds a password to use
     def add_password(self, password):
         self.user_password = password
 
