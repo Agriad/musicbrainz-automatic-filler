@@ -10,7 +10,7 @@ from Object.test_data import TestUserData
 
 # This is what runs the program. It calls multiple methods from different files to do so.
 # user_object = intro()
-gui(TestUserData)
+gui()
 # album_list = ListAlbum()
 # input_parser(user_object, album_list)
 # album_object = compressor(album_list)

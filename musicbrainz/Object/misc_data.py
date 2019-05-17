@@ -103,4 +103,3 @@ class ListAlbum:
     # Adds and album to the list
     def add_album(self, album):
         self.album.append(album)
-
